@@ -4,6 +4,9 @@ USER root
 RUN corepack enable \
 && corepack prepare pnpm@8.7.6 --activate \
 && chown node:node /directus
+
+COPY extensions/ extensions/
+
 EXPOSE 8055
 USER node
 CMD : \
